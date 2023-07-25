@@ -19,7 +19,7 @@ for (let i = 0; i < sog.length; i++)
 {
 	console.log(`iteration ${i} - ic = ${ic} - char = ${sog[i]}`);
 
-	if (sog[i] == ' '){
+	if (sog[i] === ' '){
 		fgs += ' ';
 	} else {
 		fgs += `\u001b[${RFG_COLORS[ic]}m${sog[i]}`;
@@ -31,6 +31,11 @@ for (let i = 0; i < sog.length; i++)
 
 console.log(`\u001b[0m${fgs}\u001b[0m`);
 
+// console.log('\u001b[0m');
+// console.log(`\u001b[30m\u001b[44m Test for blue`);
+// console.log(`\u001b[${RBG_COLORS[4]}m\u001b[30m Test for blue`);
+// console.log('\u001b[0m');
+
 //background
 let bic = 0;
 let bgs = '\u001b[30m';//start with text black
@@ -39,13 +44,13 @@ for (let i = 0; i < sog.length; i++)
 {
 	console.log(`iteration ${i} - bic = ${bic} - char = ${sog[i]}`);
 
-	if (sog[i] == ' '){
+	if (sog[i] === ' '){
 		bgs += ' ';
 	} else {
 		bgs += `\u001b[${RBG_COLORS[bic]}m${sog[i]}`;
 		bic++;
 	}
-
+	
 	if (bic === RFG_COLORS.length) bic = 0;
 }
 console.log(`\u001b[0m${fgs}\u001b[0m`);
